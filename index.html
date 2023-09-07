@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reg-login</title>
+    <style>
+        /* Reset some default styles */
+        body, h4 {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* General styles */
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Container styles */
+        .project-log-in-form {
+            display: flex;
+            flex-wrap: wrap; /* Enable content wrapping */
+            justify-content: center; /* Center content horizontally */
+        }
+
+        .project-login-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 90%;
+            max-width: 500px;
+            margin: 0 10px; /* Add some spacing between forms */
+            flex: 1; /* Make containers flexible within the parent */
+            padding:10px;
+        }
+
+        .project-login-title,
+        .project-access-key-title {
+            background-color: #0073e6;
+            color: #fff;
+            font-size: 24px;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Form styles */
+        .project-login-form,
+        .project-access-key-form {
+            padding: 20px;
+        }
+
+        .project-form-group {
+            margin-bottom: 15px;
+        }
+
+        .project-form-label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .project-form-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .project-form-button {
+            background-color: #0073e6;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .project-form-button.project-access-key-button {
+            background-color: #ff6600;
+            margin-top: 35px;
+        }
+
+        .project-extra-links {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .project-extra-links a {
+            text-decoration: none;
+            color: #0073e6;
+        }
+
+        /* Responsive media queries */
+        @media screen and (max-width: 768px) {
+            .project-login-container {
+                width: 100%; /* Adjust the width for medium screens */
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .project-login-container {
+                width: 100%; /* Adjust the width for smaller screens */
+                margin: 10px 0; /* Add vertical spacing between forms */
+                padding:5px;
+            }
+
+            .project-log-in-form {
+                flex-direction: column; /* Stack forms vertically on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="project-log-in-form">
+        <div class="project-login-container">
+            <h4 class="project-login-title">Login</h4>
+            <form class="project-login-form" name="loginform" id="loginform" action="https://agentlistingservice.com/wp-login.php" method="post">
+                <div class="project-form-group">
+                    <label for="user_login" class="project-form-label">Username or Email Address</label>
+                    <input type="text" name="log" id="user_login" autocomplete="username" class="project-form-input" value="" size="20">
+                </div>
+                <div class="project-form-group">
+                    <label for="user_pass" class="project-form-label">Password</label>
+                    <input type="password" name="pwd" id="user_pass" autocomplete="current-password" spellcheck="false" class="project-form-input" value="" size="20">
+                </div>
+                <div class="project-form-group">
+                    <label><input name="rememberme" type="checkbox" id="rememberme"> Remember Me</label>
+                </div>
+                <div class="project-form-group">
+                    <input type="submit" name="wp-submit" id="wp-submit" class="project-form-button" value="Log In">
+                    <input type="hidden" name="redirect_to" value="https://agentlistingservice.com/business-directory/?wpbdp_view=submit_listing">
+                </div>
+                <div class="project-extra-links">
+                    <a class="project-register-link" href="http://agentlistingservice.com/register/?redirect_to=https%3A%2F%2Fagentlistingservice.com%2Fbusiness-directory%2F%3Fwpbdp_view%3Dsubmit_listing" rel="nofollow">Not yet registered?</a> |
+                    <a href="https://agentlistingservice.com/wp-login.php?action=lostpassword&amp;redirect_to=https%3A%2F%2Fagentlistingservice.com%2Fbusiness-directory%2F%3Fwpbdp_view%3Dsubmit_listing" rel="nofollow">Lost your password?</a>
+                </div>
+            </form>
+        </div>
+
+        <div class="project-login-container">
+            <h4 class="project-access-key-title">... or use an Access Key</h4>
+            <form class="project-access-key-form" action="" method="post">
+                <input type="hidden" name="method" value="access_key">
+                <div class="project-form-group">
+                    <label for="wpbdp-access-key-email" class="project-form-label">Email Address</label>
+                    <input id="wpbdp-access-key-email" type="text" name="email" value="" class="project-form-input" placeholder="Email Address" required>
+                </div>
+                <div class="project-form-group">
+                    <label for="wpbdp-access-key-value" class="project-form-label">Access Key</label>
+                    <input id="wpbdp-access-key-value" type="text" name="access_key" value="" class="project-form-input" placeholder="Access Key" required>
+                </div>
+                <div class="project-form-group">
+                    <input type="submit" class="project-form-button project-access-key-button" value="Use Access Key">
+                </div>
+                <div class="project-form-group">
+                    <a href="https://agentlistingservice.com/business-directory/?wpbdp_view=request_access_keys&amp;redirect_to=https%3A%2F%2Fagentlistingservice.com%2Fbusiness-directory%2F%3Fwpbdp_view%3Dsubmit_listing">Request access key?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
