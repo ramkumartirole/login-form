@@ -35,9 +35,6 @@
 .coll-12 {
     width: 100%;
 }
-body {
-    font-family: Arial, sans-serif;
-  }
 
   .custom-form-container {
     width: 500px;
@@ -107,3 +104,74 @@ body {
       margin-right: 0;
     }
   }
+  @media (max-width: 480px) {
+  .custom-form-container {
+    max-width: 100%;
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .custom-form-container.form-shift {
+    margin-left: 0;
+  }
+
+  .custom-form-group-search,
+  .custom-form-group {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .custom-button:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .form-cover-image {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .coll-6 {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .iimg {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+}
+@media (max-width: 768px) {
+  .custom-form-container {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .custom-form-group-search,
+  .custom-form-group {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .custom-button:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .form-cover-image {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .coll-6 {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .iimg {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+}
